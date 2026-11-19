@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Images · Noise Division</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header><a href="index.html">Noise Division</a><nav aria-label="Main navigation"><a href="works.html">Work</a><a href="images.html" aria-current="page">Images</a><a href="ideas.html">Notes</a><a href="info.html">Contact</a></nav></header>
+<main><section id="works" aria-labelledby="works-title">
+<div class="section-head"><h1 id="works-title">Images</h1><p class="note">Project images coming soon</p></div>
+<div class="filters" role="group" aria-label="Filter projects">
+<button type="button" data-filter="all" aria-pressed="true">All</button>
+<button type="button" data-filter="digital" aria-pressed="false">Digital Media</button>
+
+<button type="button" data-filter="photo" aria-pressed="false">Photography</button>
+
+</div>
+<div class="grid">
+<article class="work" data-kind="digital"><a class="work-link" href="works/digital.html"><div class="cover" aria-hidden="true"></div><div class="caption"><h3>Echo Study</h3><small>Digital Media</small></div></a></article>
+
+<article class="work" data-kind="photo"><a class="work-link" href="works/photo.html"><div class="cover" aria-hidden="true"></div><div class="caption"><h3>Light by the Window</h3><small>Photography</small></div></a></article>
+
+</div>
+</section></main>
+<footer>©2024 Noise Division. ALL RIGHTS RESERVED</footer>
+<script>
+const buttons = document.querySelectorAll('[data-filter]');
+const works = document.querySelectorAll('[data-kind]');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    document.querySelector('.grid').classList.toggle('is-filtered', filter !== 'all');
+    buttons.forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+    works.forEach(work => {
+      work.hidden = filter !== 'all' && work.dataset.kind !== filter;
+    });
+  });
+});
+</script>
+</body>
+</html>

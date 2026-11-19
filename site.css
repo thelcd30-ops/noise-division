@@ -1,0 +1,97 @@
+@font-face{font-family:Switzer;src:url("Switzer-Regular.otf") format("opentype");font-style:normal;font-weight:400;font-display:swap}
+
+:root{--paper:#fff;--ink:#141414;--muted:#51514c;--accent:#ededed;--line:#dedede}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:1rem/1.55 Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+header,main,footer{width:min(1600px,calc(100% - 36px));margin-inline:auto}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:10px 22px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
+header>a{font-family:Switzer, Arial, sans-serif;font-weight:400;letter-spacing:normal;text-decoration:none;font-size:1.3rem}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9rem}
+nav a:hover,summary:hover{background:var(--accent)}
+h1,h2,h3,p{margin:0}
+section{padding:12px 0 32px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:5px 20px;flex-wrap:wrap;margin-bottom:10px}
+h1,h2{font-size:clamp(1.45rem,3vw,2.85rem);font-weight:900;line-height:1.18;letter-spacing:-.06em}
+.note,small{font-size:.875rem;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
+.filters button{cursor:pointer;border:0;padding:3px 10px;background:none;color:var(--ink);font-size:.9rem}
+.filters button:hover,.filters button[aria-pressed=true]{background:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px}
+.work{grid-column:span 6;min-width:0}
+.work:nth-child(2){grid-column:span 4}
+.work:nth-child(3){grid-column:span 2}
+.work:nth-child(4){grid-column:span 7}
+.grid.is-filtered .work{grid-column:1/-1;max-width:860px;width:100%}
+.cover{height:clamp(200px,30vw,490px);display:grid;place-items:center;position:relative;overflow:hidden;background:#f4f4f4}
+.caption{display:flex;align-items:baseline;justify-content:space-between;gap:4px 14px;flex-wrap:wrap;padding:7px 0}
+.caption h3{font-size:.95rem}
+.text-index{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+details{padding:12px 0}
+summary{cursor:pointer;font-weight:700}
+summary small{font-weight:400;margin-left:12px}
+details p{margin:12px 0 0;max-width:40em}
+.contact p{margin-top:8px}
+footer{margin-top:auto;padding:12px 0 24px;color:var(--muted);font-size:.875rem}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:780px){.work:nth-child(n){grid-column:span 6}.grid.is-filtered .work{grid-column:1/-1}.text-index{grid-template-columns:1fr;gap:0}}
+@media(max-width:480px){.work:nth-child(n){grid-column:1/-1}.cover{height:auto;aspect-ratio:4/3}}
+
+.work-link{display:block;text-decoration:none}
+.work-link:hover .caption{background:var(--accent)}
+a[aria-current=page]{font-weight:700}
+.page-intro{padding-top:20px}
+.project-media{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin-top:16px}
+.project-media .work{grid-column:auto}
+.project-media .cover{height:clamp(220px,42vw,600px)}
+.project-info{padding:15px 0;max-width:46rem}
+.project-nav{display:flex;justify-content:space-between;gap:14px;margin-top:18px;flex-wrap:wrap}
+.reading{max-width:45rem;padding-block:28px}
+.reading p{margin-top:18px}
+.writing-list{list-style:none;padding:0;margin:16px 0 0}
+.writing-list a{display:flex;justify-content:space-between;gap:12px;padding:12px 0}
+.writing-list a:hover{background:var(--accent)}
+@media(max-width:640px){.project-media{grid-template-columns:1fr}}
+
+
+.home-background {
+  width: 100%;
+  aspect-ratio: 3823 / 2067;
+  background: #fff url("home-background.png") center / contain no-repeat;
+}
+
+.corner-link {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  padding: 10px 16px;
+  border: 1px solid #141414;
+  background: #fff;
+  color: #141414;
+  text-decoration: none;
+  animation: corner-blink 1.6s steps(1, end) 3;
+}
+@keyframes corner-blink {
+  50% { background: #141414; color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .corner-link { animation: none; }
+}
+
+.corner-link--images {
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 10vw, 104px);
+  height: clamp(56px, 10vw, 104px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  animation: none;
+}
+.corner-link--images img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
