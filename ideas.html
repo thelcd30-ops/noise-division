@@ -4,12 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notes · Noise Division</title>
+<link rel="preload" href="Switzer-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
-<header><a href="index.html">Noise Division</a><nav aria-label="Main navigation"><a href="works.html">Work</a><a href="images.html">Images</a><a href="ideas.html" aria-current="page">Notes</a><a href="info.html">Contact</a></nav></header>
-<main><section class='page-intro'><h1>Notes</h1><ul class='writing-list'><li><a href='texts/unfinished.html'><strong>Things Left Unfinished</strong><small>Sample note</small></a></li><li><a href="writing.html"><strong>Writing</strong><small>Fiction &amp; Essays</small></a></li></ul></section></main>
-<footer>©2024 Noise Division. ALL RIGHTS RESERVED</footer>
+<body class="home-page interior-page">
+<header class="home-header">
+  <div class="home-brand">
+    <a href="index.html"><img class="site-logo" src="logo_1.svg" alt="Noise Division"></a>
+    <span lang="ja">分野</span>
+  </div>
+  <a class="home-about" href="about.html">ABOUT</a>
+</header>
+<main class="home-layout">
+<div class="home-sidebar">
+    <p class="studio-title">AOI STUDIO</p>
+    <nav aria-label="Main navigation">
+      <a href="works.html">WORKS</a>
+      <a href="images.html">IMAGES</a>
+      <a href="ideas.html" aria-current="page">NOTES</a>
+      <a href="info.html">CONTACT</a>
+    </nav>
+    <section class="home-manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <h2 id="manifesto-title">The Manifesto</h2>
+      <p>Noise Division is a conceptual frequency. In a world loud with empty signals, we introduce the glitch. Each object is a way to take reality apart.</p>
+    </section>
+  </div>
+<div class="page-content"><section class='page-intro'><h1>Notes</h1><ul class='writing-list'><li><a href='texts/unfinished.html'><strong>Things Left Unfinished</strong><small>Sample note</small></a></li><li><a href="writing.html"><strong>Writing</strong><small>Fiction &amp; Essays</small></a></li></ul></section></div></main>
+<footer class="home-footer">©2024 Noise Division. ALL RIGHTS RESERVED</footer>
 
+<button type="button" class="corner-badge" aria-label="Play glitch effect" hidden></button>
+<script src="corner-images/list.js" defer></script>
+<script src="corner.js" defer></script>
 </body>
 </html>

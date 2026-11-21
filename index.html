@@ -4,15 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Noise Division</title>
+<link rel="preload" href="Switzer-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
-<header><a href="index.html">Noise Division</a><nav aria-label="Main navigation"><a href="works.html">Work</a><a href="images.html">Images</a><a href="ideas.html">Notes</a><a href="info.html">Contact</a></nav></header>
-<main><div class="home-background" aria-hidden="true"></div></main>
-<footer>©2024 Noise Division. ALL RIGHTS RESERVED</footer>
-<a class="corner-link" href="works.html">Work</a>
+<body class="home-page">
+<header class="home-header">
+  <div class="home-brand">
+    <a href="index.html"><img class="site-logo" src="logo_1.svg" alt="Noise Division"></a>
+    <span lang="ja">分野</span>
+  </div>
+  <a class="home-about" href="about.html">ABOUT</a>
+</header>
+<main class="home-layout">
+  <div class="home-sidebar">
+    <h1>AOI STUDIO</h1>
+    <nav aria-label="Main navigation">
+      <a href="works.html">WORKS</a>
+      <a href="images.html">IMAGES</a>
+      <a href="ideas.html">NOTES</a>
+      <a href="info.html">CONTACT</a>
+    </nav>
+    <section class="home-manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <h2 id="manifesto-title">The Manifesto</h2>
+      <p>Noise Division is a conceptual frequency. In a world loud with empty signals, we introduce the glitch. Each object is a way to take reality apart.</p>
+    </section>
+  </div>
+  <button type="button" class="home-panel" aria-label="Show another image"><img id="home-image" src="home-images/home-01.jpg" alt=""><span class="home-image-title" aria-hidden="true">NOISE DIVISION</span></button>
+</main>
+<footer class="home-footer">©2024 Noise Division. ALL RIGHTS RESERVED</footer>
 
-<script src='corner-images/list.js' defer></script>
-<script src='corner.js' defer></script>
+<button type="button" class="corner-badge" aria-label="Play glitch effect" hidden></button>
+<script src="corner-images/list.js" defer></script>
+<script src="corner.js" defer></script>
+<script src="home-images.js" defer></script>
 </body>
 </html>
